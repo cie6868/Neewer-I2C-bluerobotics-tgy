@@ -1,3 +1,20 @@
+This is a fork of the bluerobotics/tgy repo (which itself is a fork of
+simonk/tgy to add I2C capabilities). Our target is a Neewer 30A ESC
+module that appears to be based on the original tgy board layout, so
+this should work on any tgy-based ESC.
+
+We changed ADCs 4 and 5 to 2 and 3 in order to free up pins for
+hardware I2C. Two new configurations are defined in `neewer-i2c.inc` and
+`neewer-pwm.inc` for correct operation on the modified board.
+
+We also set MOTOR_ADVANCE to 30 (no advance) to adjust for our motors,
+but you may want to change that back to 18 (default) according to your
+setup.
+
+
+Original Readme
+---------------
+
 https://github.com/sim-/tgy
 
 This tree contains Atmel AVR assembly code for ATmega-based 3-phase

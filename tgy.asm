@@ -136,6 +136,10 @@
 #include "tgy6a.inc"		; Turnigy Plush 6A (INT0 PWM)
 #elif defined(tgy_esc)
 #include "tgy.inc"		; TowerPro/Turnigy Basic/Plush "type 2" (INT0 PWM)
+#elif defined(neewer-i2c_esc)
+#include "neewer-i2c.inc"
+#elif defined(neewer-pwm_esc)
+#include "neewer-pwm.inc"
 #else
 #error "Unrecognized board type."
 #endif
@@ -155,7 +159,7 @@
 .equ	DEAD_TIME_HIGH	= DEAD_HIGH_NS * CPU_MHZ / 1000
 
 .if !defined(MOTOR_ADVANCE)
-.equ	MOTOR_ADVANCE	= 18	; Degrees of timing advance (0 - 30, 30 meaning no delay)
+.equ	MOTOR_ADVANCE	= 30	; Degrees of timing advance (0 - 30, 30 meaning no delay)
 .endif
 .if !defined(TIMING_OFFSET)
 .equ	TIMING_OFFSET	= 0	; Degrees of timing offset in microseconds
